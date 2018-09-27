@@ -1,0 +1,48 @@
+version: '3'
+
+volumes:
+  postgres_data_local: {}
+  postgres_backup_local: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: newsroom_django
+    depends_on:
+      - postgres
+    volumes:
+            - .:/app:z
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8080:8080"
+    command: /start
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: newsroom_postgres
+    env_file:
+      - ./.envs/.local/.postgres
+    volumes:
+      - postgres_data_local:/var/lib/postgresql/data
+      - postgres_backup_local:/backups
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+      - "8025:8025"
+  mkdocs:
+    env_file:
+      - ./.envs/.local/.mkdocs
+    build:
+      context: .
+      dockerfile: ./compose/production/mkdocs/Dockerfile
+    image: newsroom_mkdocs
+    command: "mkdocs serve --dirtyreload"
+    volumes:
+      - .:/app:z
+    ports:
+      - "8001:8001"

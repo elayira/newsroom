@@ -1,0 +1,43 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytz = "*"
+python-slugify = "*"
+Pillow = "*"
+redis = "*"
+django-environ = "*"
+django-model-utils = "*"
+django-redis = "*"
+djangorestframework = "*"
+coreapi = "*"
+gunicorn = "*"
+psycopg2 = "*"
+raven = "*"
+newrelic = "*"
+"boto3" = "*"
+django-storages = "*"
+django-anymail = "*"
+Markdown = "*"
+django-configurations = "*"
+django-filter = "*"
+dry-rest-permissions = "*"
+
+[dev-packages]
+factory-boy = "*"
+mkdocs = "*"
+mock = "*"
+django-nose = "*"
+nose-progressive = "*"
+django_coverage_plugin = "*"
+ipdb = "*"
+"flake8" = "*"
+coverage = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+"autopep8" = "*"
+
+[requires]
+python_version = "3.6"

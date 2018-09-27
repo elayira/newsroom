@@ -1,0 +1,13 @@
+site_name: newsroom
+site_description: an open API for news with multiple writers. All public endpoints are consumed through JSON.
+repo_url: https://github.com/elayira/newsroom
+site_dir: site
+copyright: Copyright &copy; 2018, <a href="https://github.com/elayira">elayira</a>.
+dev_addr: 0.0.0.0:8001
+
+nav:
+  - Home: 'index.md'
+  - API:
+    - Authentication: 'api/authentication.md'
+    - Users: 'api/users.md'
+    - News: 'api/news.md'
