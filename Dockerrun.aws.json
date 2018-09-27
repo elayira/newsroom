@@ -1,0 +1,51 @@
+{
+    "containerDefinitions": [
+        {
+            "command": [
+                "/start"
+            ],
+            "essential": true,
+            "image": "newsroom_django",
+            "mountPoints": [],
+            "name": "django",
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080
+                }
+            ],
+            "memory": 500
+        },
+        {
+            "essential": true,
+            "image": "newsroom_postgres",
+            "mountPoints": [
+                {
+                    "containerPath": "/var/lib/postgresql/data",
+                    "sourceVolume": "Postgres_Data_Local"
+                },
+                {
+                    "containerPath": "/backups",
+                    "sourceVolume": "Postgres_Backup_Local"
+                }
+            ],
+            "name": "postgres",
+            "memory": 500
+        }
+    ],
+    "family": "",
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "postgres_data_local"
+            },
+            "name": "Postgres_Data_Local"
+        },
+        {
+            "host": {
+                "sourcePath": "postgres_backup_local"
+            },
+            "name": "Postgres_Backup_Local"
+        }
+    ]
+}
