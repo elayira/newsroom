@@ -1,11 +1,12 @@
 {
+    "AWSEBDockerrunVersion": "2",
     "containerDefinitions": [
         {
             "command": [
                 "/start"
             ],
             "essential": true,
-            "image": "newsroom_django",
+            "image": "elayira/newsendpoint:0.01",
             "mountPoints": [],
             "name": "django",
             "portMappings": [
@@ -14,11 +15,11 @@
                     "hostPort": 8080
                 }
             ],
-            "memory": 500
+            "memory": 200
         },
         {
             "essential": true,
-            "image": "newsroom_postgres",
+            "image": "elayira/newsdatabase:0.01",
             "mountPoints": [
                 {
                     "containerPath": "/var/lib/postgresql/data",
@@ -30,7 +31,7 @@
                 }
             ],
             "name": "postgres",
-            "memory": 500
+            "memory": 200
         }
     ],
     "family": "",
