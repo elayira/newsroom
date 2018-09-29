@@ -1,7 +1,6 @@
 # newsroom
 
 [![Build Status](https://travis-ci.org/elayira/newsroom.svg?branch=master)](https://travis-ci.org/elayira/newsroom)
-[![Built with](https://img.shields.io/badge/Built_with-Cookiecutter_Django_Rest-F7B633.svg)](https://github.com/agconti/cookiecutter-django-rest)
 
 an open API for news with multiple writers. All public endpoints are consumed through JSON.. Check out the project's [documentation](http://elayira.github.io/newsroom/).
 
