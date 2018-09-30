@@ -6,20 +6,20 @@
                 "/start"
             ],
             "essential": true,
-            "image": "elayira/newsendpoint:0.01",
+            "image": "elayira/newsendpoint:0.02",
             "mountPoints": [],
             "name": "django",
             "portMappings": [
                 {
                     "containerPort": 8080,
-                    "hostPort": 8080
+                    "hostPort": 80
                 }
             ],
             "memory": 200
         },
         {
             "essential": true,
-            "image": "elayira/newsdatabase:0.01",
+            "image": "elayira/newsdatabase:0.02",
             "mountPoints": [
                 {
                     "containerPath": "/var/lib/postgresql/data",
